@@ -3,27 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --secondary-color: #ffe600;
+  --primary-color: #3483fa;
+  --gray: #666;
+  --color-body: #000;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 16px;
+  color: var(--color-body)
+}
+
+.btn {
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+input[type=search] {
+  border: 0;
+  color: var(--gray);
+  margin: 0;
+  border-radius: .25rem 0 0 .25rem;
+  background: #fff;
+  display: flex;
+  width: 100%;
+  padding: 10px 60px 10px 15px;
+}
+
+.search-btn {
+  border-radius: 0 .25rem .25rem 0;
 }
 
 @layer utilities {

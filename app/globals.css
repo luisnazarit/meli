@@ -12,8 +12,9 @@
 
 body {
   background: var(--bg-body);
-  font-size: 16px;
+  font-size: 14px;
   color: var(--color-body);
+  -webkit-font-smoothing: antialiased;
 }
 
 .btn {

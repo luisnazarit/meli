@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Price from "./Price";
+import Link from "next/link";
 
 export default function ItemProduct(props) {
   const { picture, title, id, price, free_sheeping } = props;
@@ -10,10 +11,12 @@ export default function ItemProduct(props) {
       <div className="search-main w-[60%]">
         <Price price={price} freeShepping={free_sheeping} />
         <h4>
-          <a href={`/item/${id}`}>{title}</a>
+          <Link href={`/item/${id}`}>{title}</Link>
         </h4>
       </div>
-      <div>hola</div>
+      <div className="text-gray-500">
+        <small>Santiago</small>
+      </div>
     </div>
   );
 }

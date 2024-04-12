@@ -3,27 +3,23 @@ import { API_SEARCH } from "@/constants/constants";
 import Image from "next/image";
 
 const getSearch = async (itemSearch) => {
-
   try {
-  const res = await fetch(`${API_SEARCH}?q=${itemSearch}`);
-  return res.json();
-  } catch(e) {
-    console.log("AHHHH")
+    const res = await fetch(`${API_SEARCH}?q=${itemSearch}`);
+    return res.json();
+  } catch (e) {
     return e;
   }
-
 };
 
 export default async function Home({ searchParams }) {
   const { q } = searchParams;
   const results = await getSearch(q);
-  
 
   return (
     <>
       <header
         role="header"
-        className="flex items-center justify-center bg-amber-300 "
+        className="flex items-center justify-center bg-yellow-300 mb-2"
       >
         <div className="max-w-7xl w-full py-3 flex gap-4 items-center">
           <Image
@@ -51,8 +47,8 @@ export default async function Home({ searchParams }) {
           </form>
         </div>
       </header>
-      <main role="main">
-        <Results results={results.results} />
+      <main role="main" className="max-w-7xl w-full mx-auto rounded bg-white">
+        <Results results={results.items} />
       </main>
     </>
   );

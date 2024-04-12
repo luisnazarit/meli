@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --bg-body: #ededed;
   --secondary-color: #ffe600;
   --primary-color: #3483fa;
   --gray: #666;
@@ -10,8 +11,9 @@
 }
 
 body {
+  background: var(--bg-body);
   font-size: 16px;
-  color: var(--color-body)
+  color: var(--color-body);
 }
 
 .btn {

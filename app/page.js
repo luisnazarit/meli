@@ -1,9 +1,10 @@
+import Breadcrumb from "@/components/Breadcrumb";
 import Results from "@/components/Results";
 import { API } from "@/constants/constants";
 
-const getSearch = async (itemSearch) => {
+const getSearch = async (url) => {
   try {
-    const res = await fetch(`${API}?q=${itemSearch}`);
+    const res = await fetch(url);
     return res.json();
   } catch (e) {
     return e;
@@ -12,16 +13,29 @@ const getSearch = async (itemSearch) => {
 
 export default async function Home({ searchParams }) {
   const { q } = searchParams;
-  const results = await getSearch(q);
+  const results = await getSearch(`${API}?q=${q}`);
+  const breadcrumb = await getSearch(`${API}/breadcrumb?q=${q}`);
 
-  return searchParams.q ? (
-    <Results results={results.items} />
-  ) : (
-    <div className="flex items-center justify-center">
-      <div className="text-center">
-        <h2 className="text-3xl">Bienvenido a Mercadolibre</h2>
-        <p>Haz una búsqueda</p>
+  return (
+    <>
+      <div className="max-w-7xl w-full mx-auto py-3">
+        <Breadcrumb breadcrumb={breadcrumb[0]} />
       </div>
-    </div>
+      <main
+        role="main"
+        className="max-w-7xl w-full mx-auto rounded bg-white p-4 min-h-80"
+      >
+        {searchParams.q ? (
+          <Results results={results.items} />
+        ) : (
+          <div className="flex items-center justify-center">
+            <div className="text-center mt-14">
+              <h2 className="text-3xl mb-3">Bienvenido a Mercadolibre</h2>
+              <p>Haz una búsqueda</p>
+            </div>
+          </div>
+        )}
+      </main>
+    </>
   );
 }

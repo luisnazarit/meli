@@ -14,12 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={font.className}>
         <Header />
-        <main
-          role="main"
-          className="max-w-7xl w-full mx-auto rounded bg-white p-4 min-h-80"
-        >
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );

@@ -18,12 +18,12 @@ export default async function Home({ searchParams }) {
 
   return (
     <>
-      <div className="max-w-7xl w-full mx-auto py-3">
-        <Breadcrumb breadcrumb={breadcrumb[0]} />
+      <div className="max-w-7xl w-full mx-auto py-3 px-4">
+        <Breadcrumb breadcrumb={breadcrumb[0]?.path_from_root} />
       </div>
       <main
         role="main"
-        className="max-w-7xl w-full mx-auto rounded bg-white p-4 min-h-80"
+        className="max-w-7xl w-full mx-auto rounded bg-white p-4 min-h-80 px-4"
       >
         {searchParams.q ? (
           <Results results={results.items} />

@@ -5,10 +5,6 @@ import { NextResponse } from "next/server";
 const parseQuery = (item, description) => {
   const { id, title, condition } = item;
   return {
-    author: {
-      name: "Luis",
-      lastname: "Nazarit",
-    },
     item: {
       id,
       title,
@@ -17,7 +13,7 @@ const parseQuery = (item, description) => {
         amount: item.price,
         decimals: getDecimals(item.price)
       },
-      picture: item.thumbnail,
+      picture: item.pictures[0].url,
       condition,
       free_sheeping: item.shipping.free_shipping,
       sold_quantity: item.initial_quantity,
@@ -27,7 +23,6 @@ const parseQuery = (item, description) => {
 };
 
 export async function GET(req, { params }) {
-  console.log(params);
   try {
     const res = await fetch(`${API_ITEMS}${params.id}`);
     const parseRes = await res.json();

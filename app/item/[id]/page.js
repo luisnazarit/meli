@@ -1,8 +1,8 @@
+import Breadcrumb from "@/components/Breadcrumb";
 import { API } from "@/constants/constants";
 import { formatCL } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 
 const getItem = async (item) => {
   try {
@@ -47,14 +47,14 @@ export default async function Page({ params }) {
 
   return (
     <>
-    {/* <Breadcrumb props={} /> */}
+    {/* <Breadcrumb  /> */}
     <main
       role="main"
       className="max-w-7xl w-full mx-auto rounded bg-white p-4 min-h-80"
     >
       <div className="flex gap-4 p-8">
         <div className="flex-1">
-          <div className="mb-4 p-20">
+          <div className="px-40 mb-8">
             <Image
               src={picture}
               alt={title}

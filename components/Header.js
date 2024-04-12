@@ -8,7 +8,7 @@ export default function Header() {
       role="header"
       className="flex items-center justify-center bg-yellow-300 mb-2"
     >
-      <div className="max-w-7xl w-full py-3 flex gap-4 items-center">
+      <div className="max-w-7xl w-full py-3 flex gap-4 items-center px-4">
         <Link href="/">
           <Image
             src="/Logo_ML@2x.png.png.png"

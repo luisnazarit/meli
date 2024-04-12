@@ -27,10 +27,6 @@ const parseQuery = (arr) => {
   };
 
   return {
-    author: {
-      name: "Luis",
-      lastName: "Nazarit",
-    },
     categories: categories(),
     items: results.slice(0, 4),
   };

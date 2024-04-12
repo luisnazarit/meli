@@ -1,19 +1,19 @@
+import { URL_SEARCH } from "@/constants/constants";
+import { getDecimals } from "@/utils/utils";
 import { NextResponse } from "next/server";
 
-const URL_SEARCH = "https://api.mercadolibre.com/sites/MLA/search?q=";
-
 const parseQuery = (arr) => {
-  const results = arr.results.map(e => ({
+  const results = arr.results.map((e) => ({
     id: e.id,
     title: e.title,
     price: {
       currency: e.currency_id,
-      ammount: e.price,
-      decimals: null
+      amount: e.price,
+      decimals: getDecimals(e.price)
     },
     picture: e.thumbnail,
     condition: e.condition,
-    free_sheeping: e.shipping.free_shipping
+    free_sheeping: e.shipping.free_shipping,
   }));
 
   const categories = () => {
@@ -23,7 +23,7 @@ const parseQuery = (arr) => {
     if (category) {
       return category.values[0]?.path_from_root.map((e) => e.name);
     }
-    return []
+    return [];
   };
 
   return {
@@ -32,7 +32,7 @@ const parseQuery = (arr) => {
       lastName: "Nazarit",
     },
     categories: categories(),
-    items: results.slice(0,4)
+    items: results.slice(0, 4),
   };
 };
 

@@ -1,9 +1,9 @@
 import Results from "@/components/Results";
-import { API_SEARCH } from "@/constants/constants";
+import { API } from "@/constants/constants";
 
 const getSearch = async (itemSearch) => {
   try {
-    const res = await fetch(`${API_SEARCH}?q=${itemSearch}`);
+    const res = await fetch(`${API}?q=${itemSearch}`);
     return res.json();
   } catch (e) {
     return e;

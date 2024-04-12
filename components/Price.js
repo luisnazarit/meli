@@ -20,7 +20,7 @@ const icon = (freeShepping) => {
 export default function Price({ price, freeShepping }) {
   return (
     <div className="text-2xl mb-3 flex gap-4 items-center">
-      {formatCL(price.ammount)} {icon(freeShepping)}
+      {formatCL(price.amount)} {icon(freeShepping)}
     </div>
   );
 }

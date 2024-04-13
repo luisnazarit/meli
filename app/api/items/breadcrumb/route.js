@@ -10,7 +10,7 @@ export async function GET(req) {
     const res = await fetch(`${URL_SEARCH}${query}`);
     const parseRes = await res.json();
 
-    return NextResponse.json(parseRes.filters.find(e => e.id === "category")?.values);
+    return NextResponse.json(parseRes.filters.find(e => e.id === "category")?.values || []);
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "API Error" }, { status: 402 });

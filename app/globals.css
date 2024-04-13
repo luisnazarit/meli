@@ -9,6 +9,7 @@
   --primary-color-hover: #2968c8;
   --gray: #666;
   --color-body: #000;
+  --container: 1200px;
 }
 
 body {
@@ -56,6 +57,30 @@ input[type=search] {
   font-weight: bold;
   svg {
     display: none;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: auto;
+}
+
+@media (width < 769px) {
+  .single-product {
+    display: flex;
+    flex-direction: column;
+    .sidebar {
+      width: auto;
+      order: 0;
+    }
+    .main {
+      order: 1;
+    }
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 

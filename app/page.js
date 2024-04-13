@@ -21,7 +21,6 @@ export default async function Home({ searchParams }) {
     <>
       <div className="container py-4">
         <Breadcrumb breadcrumb={breadcrumb[0]?.path_from_root} />
-        
       </div>
       <div className="container">
         <main role="main" className="rounded bg-white px-2 min-h-80">

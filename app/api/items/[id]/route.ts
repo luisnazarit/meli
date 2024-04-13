@@ -15,7 +15,7 @@ const parseQuery = (item, description) => {
       },
       picture: item.pictures[0].url,
       condition,
-      free_sheeping: item.shipping.free_shipping,
+      free_shiping: item.shipping.free_shipping,
       sold_quantity: item.initial_quantity,
       description,
     },

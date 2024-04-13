@@ -2,8 +2,8 @@ import { formatCL } from "@/utils/utils";
 import React from "react";
 import Image from "next/image";
 
-const icon = (freeShepping) => {
-  if (freeShepping) {
+const icon = (freeShipping: Boolean) => {
+  if (freeShipping) {
     return (
       <Image
         width={20}
@@ -17,10 +17,10 @@ const icon = (freeShepping) => {
   return;
 };
 
-export default function Price({ price, freeShepping }) {
+export default function Price({ price, freeShipping }) {
   return (
     <div className="text-2xl mb-3 flex gap-4 items-center">
-      {formatCL(price.amount)} {icon(freeShepping)}
+      {formatCL(price.amount)} {icon(freeShipping)}
     </div>
   );
 }

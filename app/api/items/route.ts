@@ -35,7 +35,7 @@ const parseQuery = (arr: Arr) => {
     },
     picture: e.thumbnail,
     condition: e.condition,
-    free_sheeping: e.shipping.free_shipping,
+    free_shiping: e.shipping.free_shipping,
   }));
 
   const categories = () => {

@@ -12,7 +12,7 @@ export default function Header() {
         <div className="py-3 flex gap-4 items-center">
           <Link href="/">
             <Image
-              src="/Logo_ML@2x.png.png.png"
+              src="/Logo_ML@2x.png"
               width={100}
               height={100}
               className="w-[60px] h-auto"

@@ -3,7 +3,7 @@ import Results from "@/components/Results";
 
 import { API } from "@/constants/constants";
 
-const getSearch = async (url) => {
+const getSearch = async (url: string) => {
   try {
     const res = await fetch(url);
     return res.json();

@@ -5,7 +5,7 @@ import { formatCL, truncateText } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-const getItem = async (item) => {
+const getItem = async (item: string) => {
   try {
     const res = await fetch(`${API}/${item}`);
     if (!res.ok) {
@@ -17,6 +17,11 @@ const getItem = async (item) => {
     return null;
   }
 };
+
+const conditionProduct = (condition: string) => {
+  if(condition === 'new') return 'Nuevo';
+  return 'Usado'
+}
 
 export async function generateMetadata({ params }) {
   const data = await getItem(params.id);
@@ -74,7 +79,7 @@ export default async function Page({ params }) {
       </div>
     );
 
-  const { title, description, price, picture } = item.item;
+  const { title, description, price, picture, condition } = item.item;
 
   return (
     <>
@@ -107,6 +112,7 @@ export default async function Page({ params }) {
                 <DescriptionItem description={description} />
               </div>
               <aside className="w-[30%] sidebar">
+                <small>{conditionProduct(condition)}</small>
                 <h1 className="text-xl mb-4 font-bold">{title}</h1>
                 <div className="text-3xl flex items-start gap-1">
                   {formatCL(price.amount)}

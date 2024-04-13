@@ -12,9 +12,9 @@ const getSearch = async (url) => {
 };
 
 export default async function Home({ searchParams }) {
-  const { q } = searchParams;
-  const results = await getSearch(`${API}?q=${q}`);
-  const breadcrumb = await getSearch(`${API}/breadcrumb?q=${q}`);
+  const { search } = searchParams;
+  const results = await getSearch(`${API}?q=${search}`);
+  const breadcrumb = await getSearch(`${API}/breadcrumb?q=${search}`);
 
   return (
     <>
@@ -25,7 +25,7 @@ export default async function Home({ searchParams }) {
         role="main"
         className="max-w-7xl w-full mx-auto rounded bg-white p-4 min-h-80 px-4"
       >
-        {searchParams.q ? (
+        {searchParams.search ? (
           <Results results={results.items} />
         ) : (
           <div className="flex items-center justify-center">

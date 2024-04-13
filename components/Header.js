@@ -20,7 +20,7 @@ export default function Header() {
         </Link>
         <form action="/" className="flex w-full">
           <input
-            name="q"
+            name="search"
             type="search"
             placeholder="Nunca dejes de buscar..."
           />

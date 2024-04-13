@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
+import DescriptionItem from "@/components/DescriptionItem";
 import { API } from "@/constants/constants";
 import { formatCL } from "@/utils/utils";
 import Image from "next/image";
@@ -12,7 +13,7 @@ const getItem = async (item) => {
     }
     return res.json();
   } catch (e) {
-    console.log(e);
+    console.log(e); 
     return null;
   }
 };
@@ -24,7 +25,6 @@ export async function generateMetadata({ params }) {
     title: `${data.item.title} | Mercadolibre`
   };
 }
-
 
 export default async function Page({ params }) {
   const item = await getItem(params.id);
@@ -64,7 +64,7 @@ export default async function Page({ params }) {
             />
           </div>
           <h3 className="text-2xl mb-4">Descripción del producto</h3>
-          <p>{description}</p>
+          <DescriptionItem description={description} />
         </div>
         <div className="w-[30%]">
           <h1 className="text-xl mb-4 font-bold">{title}</h1>

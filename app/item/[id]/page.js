@@ -78,7 +78,7 @@ export default async function Page({ params }) {
 
   return (
     <>
-      {/* <Breadcrumb  /> */}
+      <Breadcrumb  />
 
       <div className="container">
         <main role="main" className="rounded bg-white px-2 min-h-80">

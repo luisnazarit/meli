@@ -2,7 +2,29 @@ import { URL_SEARCH } from "@/constants/constants";
 import { getDecimals } from "@/utils/utils";
 import { NextResponse } from "next/server";
 
-const parseQuery = (arr) => {
+interface Item {
+  id: string;
+  title: string;
+  price: number;
+  currency_id: string;
+  thumbnail: string;
+  condition: string;
+  shipping: {
+    free_shipping: boolean;
+  };
+}
+
+type Filters = {
+  id: string,
+  values?: { path_from_root: { name: string }[] }[];
+}
+
+type Arr = {
+  results: Item[],
+  filters: Filters[]
+}
+
+const parseQuery = (arr: Arr) => {
   const results = arr.results.map((e) => ({
     id: e.id,
     title: e.title,
@@ -32,7 +54,7 @@ const parseQuery = (arr) => {
   };
 };
 
-export async function GET(req) {
+export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const query = searchParams.get("q");
 

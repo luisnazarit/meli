@@ -1,5 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Results from "@/components/Results";
+
 import { API } from "@/constants/constants";
 
 const getSearch = async (url) => {
@@ -20,6 +21,7 @@ export default async function Home({ searchParams }) {
     <>
       <div className="container py-4">
         <Breadcrumb breadcrumb={breadcrumb[0]?.path_from_root} />
+        
       </div>
       <div className="container">
         <main role="main" className="rounded bg-white px-2 min-h-80">

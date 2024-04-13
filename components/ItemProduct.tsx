@@ -14,7 +14,7 @@ type Item = {
 export default function ItemProduct(props: Item) {
   const { picture, title, id, price, free_shiping } = props;
   return (
-    <div className="border-b-slate-200 border-b p-4 flex gap-8 items-start">
+    <div className="border-b-slate-200 border-b md:px-4 py-4 flex gap-4 md:gap-8 items-start">
       <Image
         width="90"
         height="90"
@@ -30,7 +30,7 @@ export default function ItemProduct(props: Item) {
           <Link href={`/item/${id}`}>{title}</Link>
         </h4>
       </div>
-      <div className="text-gray-500">
+      <div className="text-gray-500 hidden md:block">
         <small>Santiago</small>
       </div>
     </div>

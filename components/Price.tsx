@@ -19,7 +19,7 @@ const icon = (freeShipping: Boolean) => {
 
 export default function Price({ price, freeShipping }) {
   return (
-    <div className="text-2xl mb-3 flex gap-4 items-center">
+    <div className="text-xl md:text-2xl mb-3 flex gap-4 items-center">
       {formatCL(price.amount)} {icon(freeShipping)}
     </div>
   );

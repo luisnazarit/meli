@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
     "twitter:description": "hola",
     openGraph: {
       images: picture,
-      title
+      title,
     },
     twitter: {
       card: "app",
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
         },
         url: {
           iphone: `meli://item?${id}`,
-          ipad: `meli://item?${id}`
+          ipad: `meli://item?${id}`,
         },
       },
     },
@@ -78,12 +78,21 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <Breadcrumb  />
+      <div className="container py-4">
+        <Breadcrumb breadcrumb={[{ id: "", name: title }]} />
+      </div>
 
       <div className="container">
         <main role="main" className="rounded bg-white px-2 min-h-80">
           <div className="p-4">
-            <div className="flex gap-4 p-8 single-product">
+            <Image
+              src={picture}
+              alt={title}
+              width={90}
+              height={90}
+              className="w-full md:hidden mb-4"
+            />
+            <div className="flex gap-4 md:p-8 single-product">
               <div className="md:flex-1 main">
                 <div className="md:px-40 mb-8">
                   <Image
@@ -91,7 +100,7 @@ export default async function Page({ params }) {
                     alt={title}
                     width={90}
                     height={90}
-                    className="w-full"
+                    className="w-full hidden md:block"
                   />
                 </div>
                 <h3 className="text-2xl mb-4">Descripción del producto</h3>
@@ -103,7 +112,7 @@ export default async function Page({ params }) {
                   {formatCL(price.amount)}
                   <small className="text-sm">{price.decimals}</small>
                 </div>
-                <form className="my-8">
+                <form className="mt-8">
                   <button className="btn btn-primary w-full">Comprar</button>
                 </form>
               </aside>

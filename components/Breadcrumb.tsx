@@ -6,7 +6,7 @@ export default function Breadcrumb({breadcrumb}) {
 
   if (!breadcrumb || breadcrumb?.length === 0) return null;
   return (
-    <div className="text-gray-500">
+    <div className="text-gray-500 text-xs md:text-base">
       {breadcrumb.map((e: breadcrumbType) => {
         return (
           <div

@@ -14,13 +14,13 @@ type Item = {
 export default function ItemProduct(props: Item) {
   const { picture, title, id, price, free_shiping } = props;
   return (
-    <div className="border-b-slate-200 border-b p-4 flex gap-8">
+    <div className="border-b-slate-200 border-b p-4 flex gap-8 items-start">
       <Image
         width="90"
         height="90"
         alt={title}
         src={picture}
-        className="w-[180px]"
+        className="w-[100px] md:w-[180px]"
       />
       <div className="search-main w-[60%]">
         <Link href={`/item/${id}`}>

@@ -24,7 +24,7 @@ export default async function Home({ searchParams }) {
       </div>
       <div className="container">
         <main role="main" className="rounded bg-white px-2 min-h-80">
-          <div className="p-4">
+          <div className="p-2 md:p-4">
             {searchParams.search ? (
               <Results results={results.items} />
             ) : (

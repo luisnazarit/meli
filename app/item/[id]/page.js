@@ -1,7 +1,7 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import DescriptionItem from "@/components/DescriptionItem";
 import { API } from "@/constants/constants";
-import { formatCL } from "@/utils/utils";
+import { formatCL, truncateText } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,8 +20,40 @@ const getItem = async (item) => {
 
 export async function generateMetadata({ params }) {
   const data = await getItem(params.id);
+  const { title, description, picture, id } = data.item;
   return {
-    title: `${data.item.title} | Mercadolibre`,
+    title: `${title} | Mercado Libre`,
+    description:
+      "Envíos Gratis en el día ✓ Compre Telefono en cuotas sin interés! Conozca nuestras increíbles ofertas y promociones en millones de productos.",
+    "twitter:description": "hola",
+    openGraph: {
+      images: picture,
+      title
+    },
+    twitter: {
+      card: "app",
+      title,
+      description: truncateText(description, 300),
+      siteId: id,
+      creator: "Mercado Libre",
+      creatorId: id,
+      images: {
+        url: picture,
+        alt: title,
+      },
+      app: {
+        name: "Mercado Libre",
+        id: {
+          iphone: "Mercado Libre",
+          ipad: "Mercado Libre",
+          googleplay: "com.mercadolibre",
+        },
+        url: {
+          iphone: `meli://item?${id}`,
+          ipad: `meli://item?${id}`
+        },
+      },
+    },
   };
 }
 
@@ -47,6 +79,7 @@ export default async function Page({ params }) {
   return (
     <>
       {/* <Breadcrumb  /> */}
+
       <div className="container">
         <main role="main" className="rounded bg-white px-2 min-h-80">
           <div className="p-4">

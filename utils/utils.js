@@ -8,4 +8,8 @@ const getDecimals = (number) => {
   return decimalPortion.substring(decimalPortion.indexOf(".") + 1);
 };
 
-export {formatCL, getDecimals}
+function truncateText(text, maxLength) {
+  return text.length > maxLength ? text.substring(0, maxLength).trim() + '...' : text;
+}
+
+export {formatCL, getDecimals, truncateText}

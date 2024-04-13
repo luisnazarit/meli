@@ -29,7 +29,7 @@ export default async function Home({ searchParams }) {
             ) : (
               <div className="flex items-center justify-center">
                 <div className="text-center mt-14">
-                  <h2 className="text-3xl mb-3">Bienvenido a Mercadolibre</h2>
+                  <h2 className="text-3xl mb-3">Bienvenido a Mercado Libre</h2>
                   <p>Haz una búsqueda</p>
                 </div>
               </div>

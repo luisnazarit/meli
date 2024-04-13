@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 const font = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
-  title: "Mercadolibre",
+  title: "Mercado Libre",
   description: "Nunca dejes de buscar",
 };
 

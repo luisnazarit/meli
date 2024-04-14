@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Test para MELI, desarrollado bajo Nextjs
 
-## Getting Started
-
-First, run the development server:
+Correr en servidor los siguientes comandos:
 
 ```bash
 npm run dev
@@ -14,24 +12,18 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Luego revisar en [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Proyecto
 
-## Learn More
+- La firma de json la pueden encontrar en middleware.js
+- Se aplicaron tags de SEO de twitter y Open Graph.
+- No fue necesario utilizar un procesador de CSS, con tailwind se resuelve todo. Se ajustó el color amarillo a la configuración de este en tailwind.config
+- Adicionalmente se agregó una carpeta de test con algunos ejemplos básicos.
+-Adicionalmente se manejó el html para su correcto funcionamiento en distintas pantallas.
+- Se utilizó la tipografía Poppins ya que la original de Mercadolibre (Próxima Nova), no la tengo a disposición y no era tampoco la del diseño que se envió para este test.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# meli
+Pueden ver el funcionamiento en [https://meli-nine.vercel.app/](https://meli-nine.vercel.app/)

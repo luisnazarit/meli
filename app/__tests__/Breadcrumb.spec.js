@@ -31,3 +31,15 @@ it('render breadcrumb', () => {
   )
   expect(screen.getByText('De Mano'))
 })
+
+it('Breadcrumb without data', () => {
+
+  const breadcrumb = [];
+
+  const {container} = render(
+    <Breadcrumb breadcrumb={breadcrumb} />
+  )
+  expect(container.getElementsByClassName('breadcrumb').length).toBe(0);
+})
+
+

@@ -19,7 +19,7 @@ export default function ItemProduct(props: Item) {
         width="90"
         height="90"
         alt={title}
-        src={picture}
+        src={picture || "/no-image.jpeg"}
         className="w-[100px] md:w-[180px]"
       />
       <div className="search-main w-[60%]">

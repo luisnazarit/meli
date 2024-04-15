@@ -1,8 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SearchInput from "./SearchInput";
+
 
 export default function Header() {
+
   return (
     <header
       role="header"
@@ -20,11 +23,7 @@ export default function Header() {
             />
           </Link>
           <form action="/" className="flex w-full">
-            <input
-              name="search"
-              type="search"
-              placeholder="Nunca dejes de buscar..."
-            />
+            <SearchInput />
             <button className="search-btn bg-gray-50 flex items-center px-4">
               <Image
                 src="/ic_Search@2x.png"

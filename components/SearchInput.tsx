@@ -1,8 +1,14 @@
 "use client"
+import { useEffect, useState } from "react";
 
 export default function SearchInput() {
-  const url = new URL(window.location.href);
-  const query = url.searchParams.get("search");
+  
+  const [url, setUrl] = useState(null);
+  const query = url?.searchParams.get("search")
+
+  useEffect(() => {
+    setUrl(new URL(window.location.href))
+  }, []);
 
   return (
     <input
